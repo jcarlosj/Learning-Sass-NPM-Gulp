@@ -1,0 +1,17 @@
+// Define variables de color
+$blanco      : #EEE8D6;
+$azul-oscuro : #101068;
+$amarillo    : #FFBA00;
+$azul        : #0076A3;
+$verde       : #548C27;
+$rojo        : #fE2D28;
+$morado      : #6D73C2;
+$negro       : #000000;
+
+// Define color de fondo de la página
+$color-fondo : $azul-oscuro;
+
+// Realizamos una prueba del funcionamiento de las variables
+body {
+  background-color: $color-fondo;
+}
