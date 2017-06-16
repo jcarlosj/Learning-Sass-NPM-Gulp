@@ -8,10 +8,20 @@ $rojo        : #fE2D28;
 $morado      : #6D73C2;
 $negro       : #000000;
 
-// Define color de fondo de la página
-$color-fondo : $azul-oscuro;
+// Define colores de la página
+$color-fondo     : $azul;
+$color-fuente-principal : $negro;
+$color-fuente-titulos   : $amarillo;
 
 // Realizamos una prueba del funcionamiento de las variables
 body {
   background-color: $color-fondo;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  color: $color-fuente-principal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-fuente-titulos;
 }
