@@ -12,7 +12,8 @@ $morado      : #6D73C2;
 $negro       : #000000;
 
 // Define colores de la página
-$color-fondo     : $azul;
+$color-fondo-general    : $azul;
+$color-fondo-navegacion : $azul-oscuro;
 $color-fuente-principal : $negro;
 $color-fuente-titulos   : $amarillo;
 
@@ -35,10 +36,19 @@ $desktop : 1024px;
     @content;
   }
 }
+// Mixin para ClearFix
+@mixin clearfix {
+  &:after {
+    /* Resetea estilos de flotación */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
 // Realizamos una prueba del funcionamiento de las variables
 body {
-  background-color: $color-fondo;
+  background-color: $color-fondo-general;
   margin: 0;
   padding: 0;
   font-size: 1.4rem;
@@ -52,17 +62,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
+  /* < 768px */
   margin: 0 auto;
   max-width: 80%;
-  background-color: $rojo;        /* < 768px */
+  background-color: $rojo;
   // Implementamos los Mixin para Media Queries
   @include tablet {
+    /* >= 768px && < de 1024px  */
     width: 90%;
-    background-color: $amarillo;  /* >= 768px && < de 1024px  */
+    background-color: $verde;
   }
   @include desktop {
+    /* > 1024px */
     width: 1000px;
-    background-color: $blanco;   /* > 1024px */
+    background-color: $blanco;
+  }
+}
+
+// Implementando Nested (Anidación de CSS)
+.navegacion {
+  background-color: $color-fondo-navegacion;
+  padding: 10px;
+  @include clearfix;
+
+  h2 {
+    /* Título del Menu */
+    margin : 0;
+    float : left;
+    display : none;
+    // Implementamos los Mixin para Media Queries
+    @include tablet {
+      display: block;
+    }
   }
 
+  nav {
+    /* Menu */
+    display: inline;
+    margin-top: 10px;
+    // Implementamos los Mixin para Media Queries
+    @include tablet {
+      float: right;
+    }
+
+    a {
+      color: $blanco;
+      font-size: 1.3rem;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+      // Implementamos los Mixin para Media Queries
+      @include tablet {
+        display: inline;
+        text-align: left;
+      }
+
+      &:hover {
+        color: $amarillo;
+      }
+    }
+  }
 }
