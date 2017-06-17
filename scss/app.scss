@@ -20,6 +20,22 @@ $color-fuente-titulos   : $amarillo;
 $fuente-titulos   : 'Open Sans', sans-serif;
 $fuente-principal : 'Bitter', serif;
 
+// Define tamaños de dispositivos
+$tablet  : 768px;
+$desktop : 1024px;
+
+// Mixin para Media Queries
+@mixin tablet {
+  @media only screen and ( min-width: #{ $tablet } ) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and ( min-width: #{ $desktop } ) {
+    @content;
+  }
+}
+
 // Realizamos una prueba del funcionamiento de las variables
 body {
   background-color: $color-fondo;
@@ -33,4 +49,20 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $color-fuente-titulos;
   font-family: $fuente-titulos;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  background-color: $rojo;        /* < 768px */
+  // Implementamos los Mixin para Media Queries
+  @include tablet {
+    width: 90%;
+    background-color: $amarillo;  /* >= 768px && < de 1024px  */
+  }
+  @include desktop {
+    width: 1000px;
+    background-color: $blanco;   /* > 1024px */
+  }
+
 }

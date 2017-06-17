@@ -11,3 +11,19 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #FFBA00;
   font-family: "Open Sans", sans-serif; }
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  background-color: #fE2D28;
+  /* < 768px */ }
+  @media only screen and (min-width: 768px) {
+    .container {
+      width: 90%;
+      background-color: #FFBA00;
+      /* >= 768px && < de 1024px  */ } }
+  @media only screen and (min-width: 1024px) {
+    .container {
+      width: 1000px;
+      background-color: #EEE8D6;
+      /* > 1024px */ } }
