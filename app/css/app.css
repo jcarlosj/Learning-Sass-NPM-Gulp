@@ -65,3 +65,34 @@ h1, h2, h3, h4, h5, h6 {
           text-align: left; } }
       .navegacion nav a:hover {
         color: #FFBA00; }
+
+.background {
+  /* Imagenes de fondo */
+  display: table;
+  width: 100%;
+  position: relative; }
+  .background .contenido {
+    /* Contenido general de la imagen de fondo */
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    font-size: 1.3rem; }
+    .background .contenido p {
+      /* Párrafo del contenido general de la imagen de fondo */
+      color: #EEE8D6;
+      font-weight: 700; }
+
+.london {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen02.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 500px; }
+
+.estacion {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen03.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 250px; }

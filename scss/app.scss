@@ -45,6 +45,14 @@ $desktop : 1024px;
     clear: both;
   }
 }
+// Mixin "Avanzado" para imagenes de fondo
+@mixin imagenFondo( $imagen, $height: 100vh, $position: center center ) {
+  background: linear-gradient( to bottom, rgba( 0, 0, 0, 0 ), rgba( 0, 0, 0, .6 ) ), url( $imagen );
+  background-repeat: no-repeat;
+  background-position: $position;
+  background-size: cover;
+  height: $height;
+}
 
 // Realizamos una prueba del funcionamiento de las variables
 body {
@@ -123,4 +131,34 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
+}
+
+.background {
+  /* Imagenes de fondo */
+  display: table;
+  width: 100%;
+  position: relative;
+
+  .contenido {
+    /* Contenido general de la imagen de fondo */
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    font-size: 1.3rem;
+
+    p {
+      /* Párrafo del contenido general de la imagen de fondo */
+      color: $blanco;
+      font-weight: 700;
+    }
+  }
+}
+
+// Implementación del Mixin de imagenes (Contenido destacado)
+.london {
+  @include imagenFondo( '../img/imagen02.jpg', 500px, top center );
+}
+.estacion {
+  @include imagenFondo( '../img/imagen03.jpg', 250px, top center );
 }
