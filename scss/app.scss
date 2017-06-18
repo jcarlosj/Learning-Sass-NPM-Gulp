@@ -162,3 +162,22 @@ h1, h2, h3, h4, h5, h6 {
 .estacion {
   @include imagenFondo( '../img/imagen03.jpg', 250px, top center );
 }
+
+#contenido-principal {
+  /* Contenido principal */
+  box-sizing: border-box;
+  // Implementamos los Mixin para Media Queries
+  @include tablet {
+    width: 66.7%;
+    float: left;
+  }
+}
+
+aside {
+  /* Barra lateral principal (Museos en Londres) */
+  // Implementamos los Mixin para Media Queries
+  @include tablet {
+    width: 33.3%;
+    float: right;
+  }
+}

@@ -96,3 +96,18 @@ h1, h2, h3, h4, h5, h6 {
   background-position: top center;
   background-size: cover;
   height: 250px; }
+
+#contenido-principal {
+  /* Contenido principal */
+  box-sizing: border-box; }
+  @media only screen and (min-width: 768px) {
+    #contenido-principal {
+      width: 66.7%;
+      float: left; } }
+
+aside {
+  /* Barra lateral principal (Museos en Londres) */ }
+  @media only screen and (min-width: 768px) {
+    aside {
+      width: 33.3%;
+      float: right; } }
