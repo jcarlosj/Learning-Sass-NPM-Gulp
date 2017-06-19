@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   /* < 768px */
   margin: 0 auto;
-  max-width: 80%; }
+  max-width: 96%; }
   @media only screen and (min-width: 768px) {
     .container {
       /* >= 768px && < de 1024px  */
@@ -96,12 +96,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #contenido-principal {
   /* Contenido principal */
-  box-sizing: border-box;
-  padding: 0 20px 0 0; }
+  box-sizing: border-box; }
   @media only screen and (min-width: 768px) {
     #contenido-principal {
       width: 66.7%;
-      float: left; } }
+      float: left;
+      padding: 0 20px 0 0; } }
 
 aside {
   /* Barra lateral principal (Museos en Londres) */ }
@@ -126,3 +126,23 @@ aside {
   .noticia p {
     font-size: 1rem;
     color: #EEE8D6; }
+
+.btn, .btn-verde {
+  /* Valores del botón genérico */
+  color: #EEE8D6;
+  display: block;
+  background-color: #fE2D28;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 1rem;
+  transition: all 3s ease; }
+  @media only screen and (min-width: 768px) {
+    .btn, .btn-verde {
+      display: inline-block; } }
+  .btn:hover, .btn-verde:hover {
+    background-color: #101068; }
+
+.btn-verde {
+  background-color: #548C27; }
