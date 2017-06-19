@@ -74,6 +74,11 @@ $desktop : 1024px;
 
 }
 
+// Mixin "Avanzado" para "border-radius"
+@mixin border-radius( $border ) {
+  border-radius: $border;
+}
+
 // Realizamos una prueba del funcionamiento de las variables
 body {
   background-color: $color-fondo-general;
@@ -238,9 +243,11 @@ aside {
   padding: 5px 15px;
   font-size: 1rem;
   transition: all 3s ease;
+  @include border-radius( 0px );
 
   @include tablet {
     display: inline-block;
+    @include border-radius( 5px );
   }
 
   &:hover {
@@ -310,6 +317,7 @@ table {
       /* Dimensiones de cada imagen en la galería */
       display: block;
       max-width: 100%;
+      @include border-radius( 10px );
     }
   }
 }

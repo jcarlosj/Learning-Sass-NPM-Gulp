@@ -137,10 +137,12 @@ aside {
   text-transform: uppercase;
   padding: 5px 15px;
   font-size: 1rem;
-  transition: all 3s ease; }
+  transition: all 3s ease;
+  border-radius: 0px; }
   @media only screen and (min-width: 768px) {
     .btn, .btn-verde {
-      display: inline-block; } }
+      display: inline-block;
+      border-radius: 5px; } }
   .btn:hover, .btn-verde:hover {
     background-color: #8c0401; }
 
@@ -200,4 +202,5 @@ table {
   .galeria li.imagen img {
     /* Dimensiones de cada imagen en la galería */
     display: block;
-    max-width: 100%; }
+    max-width: 100%;
+    border-radius: 10px; }
