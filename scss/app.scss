@@ -59,6 +59,21 @@ $desktop : 1024px;
   height: $height;
 }
 
+// Mixin "Avanzado" para galería de imagenes
+@mixin galeria( $quantity, $margin ) {
+  width: ( 100% - ( $quantity - 1 ) * $margin ) / $quantity;
+  &:nth-child( n ) {
+    margin-right: $margin;
+    margin-bottom: $margin;
+  }
+
+  &:nth-child( #{$quantity}n + 1 ) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+}
+
 // Realizamos una prueba del funcionamiento de las variables
 body {
   background-color: $color-fondo-general;
@@ -279,5 +294,22 @@ table {
     background-color: darken( $amarillo, 5 );
     color: $negro;
     text-align: center;
+  }
+}
+
+/* Galeria de imagenes */
+.galeria {
+  @include clearfix;
+  li.imagen {
+    /* Cada imagen de la galería */
+    float: left;
+    list-style: none;
+    @include galeria( 4, 1% );     // Implementamos el Mixin del grid de la galería
+
+    img {
+      /* Dimensiones de cada imagen en la galería */
+      display: block;
+      max-width: 100%;
+    }
   }
 }

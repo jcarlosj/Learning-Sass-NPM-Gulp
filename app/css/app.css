@@ -178,3 +178,26 @@ table {
     background-color: #e6a700;
     color: #000000;
     text-align: center; }
+
+/* Galeria de imagenes */
+.galeria:after {
+  /* Resetea estilos de flotación */
+  content: "";
+  display: table;
+  clear: both; }
+
+.galeria li.imagen {
+  /* Cada imagen de la galería */
+  float: left;
+  list-style: none;
+  width: 24.25%; }
+  .galeria li.imagen:nth-child(n) {
+    margin-right: 1%;
+    margin-bottom: 1%; }
+  .galeria li.imagen:nth-child(4n + 1) {
+    margin-right: 0;
+    margin-bottom: 0; }
+  .galeria li.imagen img {
+    /* Dimensiones de cada imagen en la galería */
+    display: block;
+    max-width: 100%; }
