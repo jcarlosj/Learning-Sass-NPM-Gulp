@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
       width: 1000px; } }
 
 .navegacion {
-  background-color: #101068;
+  background-color: #09093c;
   padding: 10px; }
   .navegacion:after {
     /* Resetea estilos de flotación */
@@ -116,7 +116,7 @@ aside {
   margin: 30px 0;
   border-top: 2px dotted #EEE8D6; }
   .noticia h3 {
-    color: #EEE8D6;
+    color: #ffd35c;
     font-size: 1.3rem;
     text-transform: uppercase;
     margin-top: 0; }
@@ -131,7 +131,7 @@ aside {
   /* Valores del botón genérico */
   color: #EEE8D6;
   display: block;
-  background-color: #fE2D28;
+  background-color: #d80601;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -142,7 +142,7 @@ aside {
     .btn, .btn-verde {
       display: inline-block; } }
   .btn:hover, .btn-verde:hover {
-    background-color: #101068; }
+    background-color: #8c0401; }
 
 .btn-verde {
   background-color: #548C27; }

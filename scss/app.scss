@@ -13,11 +13,11 @@ $negro       : #000000;
 
 // Define colores de la página
 $color-fondo-general    : $azul;
-$color-fondo-navegacion : $azul-oscuro;
+$color-fondo-navegacion : darken( $azul-oscuro, 10 );
 $color-fuente-principal : $negro;
 $color-fuente-titulos   : $amarillo;
 $color-borde-noticia    : $blanco;
-$color-titulo-noticia   : $blanco;
+$color-titulo-noticia   : lighten( $amarillo, 18 );
 $color-texto-noticia    : $blanco;
 $color-fondo-boton      : $rojo;
 $color-texto-boton      : $blanco;
@@ -216,7 +216,7 @@ aside {
   /* Valores del botón genérico */
   color: $color-texto-boton;
   display: block;
-  background-color: $color-fondo-boton;
+  background-color: darken( $color-fondo-boton, 15 );
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -229,7 +229,7 @@ aside {
   }
 
   &:hover {
-    background-color: $azul-oscuro;
+    background-color: darken( $color-fondo-boton, 30 );
   }
 }
 
@@ -237,4 +237,5 @@ aside {
 .btn-verde {
   @extend .btn;    // Hereda todos los estilos de la clase btn
   background-color: $verde;
+
 }
