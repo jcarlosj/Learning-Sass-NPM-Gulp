@@ -146,3 +146,35 @@ aside {
 
 .btn-verde {
   background-color: #548C27; }
+
+table {
+  /* Cuerpo de la tabla "Museos en Londres" */
+  margin-top: 30px;
+  margin-bottom: 45px;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  border-collapse: collapse; }
+  table > caption {
+    /* Titulo de la tabla */
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    padding: 5px;
+    color: #FFBA00;
+    margin-bottom: 15px; }
+  table > thead > tr, table > tbody > tr {
+    background-color: #006084;
+    color: #EEE8D6; }
+    table > thead > tr:nth-child(odd), table > tbody > tr:nth-child(odd) {
+      background-color: #0076A3; }
+    table > thead > tr:hover, table > tbody > tr:hover {
+      background-color: #e6a700; }
+    table > thead > tr th, table > thead > tr td, table > tbody > tr th, table > tbody > tr td {
+      padding: 6px;
+      border-bottom: 1px dotted #101068; }
+  table thead tr th {
+    /* Titulo de las columnas */
+    background-color: #e6a700;
+    color: #000000;
+    text-align: center; }
