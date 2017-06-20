@@ -197,7 +197,7 @@ table {
     max-width: 100%;
     border-radius: 10px; }
 
-.btn, .btn-verde {
+.btn, .btn-verde, li .btn-servicio {
   /* Valores del botón genérico */
   color: #EEE8D6;
   display: block;
@@ -210,10 +210,10 @@ table {
   transition: all 3s ease;
   border-radius: 0px; }
   @media only screen and (min-width: 768px) {
-    .btn, .btn-verde {
+    .btn, .btn-verde, li .btn-servicio {
       display: inline-block;
       border-radius: 5px; } }
-  .btn:hover, .btn-verde:hover {
+  .btn:hover, .btn-verde:hover, li .btn-servicio:hover {
     background-color: #8c0401; }
 
 .btn-verde {
@@ -235,3 +235,20 @@ table {
   .noticia p {
     font-size: 1rem;
     color: #EEE8D6; }
+
+.servicios-lista {
+  list-style: none;
+  padding: 0; }
+
+li {
+  text-align: center; }
+  li h3 {
+    margin: 0; }
+  li p {
+    color: #EEE8D6; }
+  li .btn-servicio {
+    background-color: #FFBA00;
+    color: #101068;
+    font-weight: bold; }
+    li .btn-servicio:hover {
+      color: #EEE8D6; }
