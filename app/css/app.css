@@ -26,21 +26,52 @@ h1, h2, h3, h4, h5, h6 {
       /* > 1024px */
       width: 1000px; } }
 
-#contenido-principal {
-  /* Contenido principal */
-  box-sizing: border-box; }
-  @media only screen and (min-width: 768px) {
-    #contenido-principal {
-      width: 66.7%;
-      float: left;
-      padding: 0 20px 0 0; } }
+/* Grid */
+.clear-fix:after {
+  /* Resetea estilos de flotación */
+  content: "";
+  display: table;
+  clear: both; }
 
-aside {
-  /* Barra lateral principal (Museos en Londres) */ }
-  @media only screen and (min-width: 768px) {
-    aside {
-      width: 33.3%;
-      float: right; } }
+@media only screen and (min-width: 768px) {
+  .clear-fix {
+    margin: 0 -1em;
+    /* Reduce el cuerpo del contenido */ } }
+
+[class*='col-'] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 1em;
+  /* Agrega "padding" a cada elemento en el que se usa la clase "col-" */
+  width: 100%; }
+
+@media only screen and (min-width: 768px) {
+  .col-1 {
+    width: 8.33333%; }
+  .col-2 {
+    width: 16.66667%; }
+  .col-3 {
+    width: 25%; }
+  .col-4 {
+    width: 33.33333%; }
+  .col-5 {
+    width: 41.66667%; }
+  .col-6 {
+    width: 50%; }
+  .col-7 {
+    width: 58.33333%; }
+  .col-8 {
+    width: 66.66667%; }
+  .col-9 {
+    width: 75%; }
+  .col-10 {
+    width: 83.33333%; }
+  .col-11 {
+    width: 91.66667%; }
+  .col-12 {
+    width: 100%; } }
 
 .navegacion {
   background-color: #09093c;
@@ -189,7 +220,7 @@ table {
   background-color: #548C27; }
 
 .noticia {
-  /*  */
+  /* Bloque de noticias */
   padding-top: 30px;
   margin: 30px 0;
   border-top: 2px dotted #EEE8D6; }

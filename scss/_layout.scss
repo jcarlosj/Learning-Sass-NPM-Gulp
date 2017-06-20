@@ -32,22 +32,27 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#contenido-principal {
-  /* Contenido principal */
-  box-sizing: border-box;
-  // Implementamos los Mixin para Media Queries
+/* Grid */
+
+// Resetea "float" de las etiquetas y devuelve altura a la etiqueta padre
+.clear-fix {
+  @include clearfix;
   @include tablet {
-    width: 66.7%;
-    float: left;
-    padding: 0 20px 0 0;
+    margin: 0 -1em; /* Reduce el cuerpo del contenido */
   }
 }
 
-aside {
-  /* Barra lateral principal (Museos en Londres) */
-  // Implementamos los Mixin para Media Queries
-  @include tablet {
-    width: 33.3%;
-    float: right;
+[class*='col-'] {
+  @include border-box;
+  float: left;
+  padding: 1em;  /* Agrega "padding" a cada elemento en el que se usa la clase "col-" */
+  width: 100%;
+}
+
+@include tablet {
+  @for $i from 1 through $number-cols {
+    .col-#{ $i } {
+      width: 100% / $number-cols * $i;
+    }
   }
 }
