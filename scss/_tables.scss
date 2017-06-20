@@ -1,0 +1,41 @@
+table {
+  /* Cuerpo de la tabla "Museos en Londres" */
+  margin-top: 30px;
+  margin-bottom: 45px;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  border-collapse: collapse;
+  > caption {
+    /* Titulo de la tabla */
+    text-align: center;
+    font-family: $fuente-titulos;
+    font-size: 1.6rem;
+    padding: 5px;
+    color: $amarillo;
+    margin-bottom: 15px;
+  }
+  > thead, > tbody {
+    > tr {
+      background-color: darken( $azul, 6 );
+      color: $blanco;
+      &:nth-child( odd ) {
+         background-color: $azul;
+      }
+      &:hover {
+        background-color: darken( $amarillo, 5 );
+      }
+
+      th, td {
+        padding: 6px;
+        border-bottom: 1px dotted $azul-oscuro;
+      }
+    }
+  }
+  thead tr th {
+    /* Titulo de las columnas */
+    background-color: darken( $amarillo, 5 );
+    color: $negro;
+    text-align: center;
+  }
+}

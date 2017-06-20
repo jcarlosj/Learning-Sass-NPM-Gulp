@@ -1,0 +1,45 @@
+// Implementando Nested (Anidación de CSS)
+.navegacion {
+  background-color: $color-fondo-navegacion;
+  padding: 10px;
+  @include clearfix;
+
+  h2 {
+    /* Título del Menu */
+    margin : 0;
+    float : left;
+    display : none;
+    // Implementamos los Mixin para Media Queries
+    @include tablet {
+      display: block;
+    }
+  }
+
+  nav {
+    /* Menu */
+    display: inline;
+    margin-top: 10px;
+    // Implementamos los Mixin para Media Queries
+    @include tablet {
+      float: right;
+    }
+
+    a {
+      color: $blanco;
+      font-size: 1.3rem;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+      // Implementamos los Mixin para Media Queries
+      @include tablet {
+        display: inline;
+        text-align: left;
+      }
+
+      &:hover {
+        color: $amarillo;
+      }
+    }
+  }
+}

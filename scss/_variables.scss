@@ -1,0 +1,28 @@
+// Define variables de color
+$blanco      : #EEE8D6;
+$azul-oscuro : #101068;
+$amarillo    : #FFBA00;
+$azul        : #0076A3;
+$verde       : #548C27;
+$rojo        : #fE2D28;
+$morado      : #6D73C2;
+$negro       : #000000;
+
+// Define colores de la página
+$color-fondo-general    : $azul;
+$color-fondo-navegacion : darken( $azul-oscuro, 10 );
+$color-fuente-principal : $negro;
+$color-fuente-titulos   : $amarillo;
+$color-borde-noticia    : $blanco;
+$color-titulo-noticia   : lighten( $amarillo, 18 );
+$color-texto-noticia    : $blanco;
+$color-fondo-boton      : $rojo;
+$color-texto-boton      : $blanco;
+
+// Define los tipos de fuentes de la página
+$fuente-titulos   : 'Open Sans', sans-serif;
+$fuente-principal : 'Bitter', serif;
+
+// Define tamaños de dispositivos
+$tablet  : 768px;
+$desktop : 1024px;

@@ -1,0 +1,29 @@
+.btn {
+  /* Valores del botón genérico */
+  color: $color-texto-boton;
+  display: block;
+  background-color: darken( $color-fondo-boton, 15 );
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 1rem;
+  transition: all 3s ease;
+  @include border-radius( 0px );
+
+  @include tablet {
+    display: inline-block;
+    @include border-radius( 5px );
+  }
+
+  &:hover {
+    background-color: darken( $color-fondo-boton, 30 );
+  }
+}
+
+// Crea un boton personalizado a partir de otro ya existente
+.btn-verde {
+  @extend .btn;    // Hereda todos los estilos de la clase btn
+  background-color: $verde;
+
+}

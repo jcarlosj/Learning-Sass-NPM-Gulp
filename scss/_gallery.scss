@@ -1,0 +1,17 @@
+/* Galeria de imagenes */
+.galeria {
+  @include clearfix;
+  li.imagen {
+    /* Cada imagen de la galería */
+    float: left;
+    list-style: none;
+    @include galeria( 4, 1% );     // Implementamos el Mixin del grid de la galería
+
+    img {
+      /* Dimensiones de cada imagen en la galería */
+      display: block;
+      max-width: 100%;
+      @include border-radius( 10px );
+    }
+  }
+}

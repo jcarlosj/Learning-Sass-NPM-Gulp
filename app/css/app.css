@@ -26,6 +26,22 @@ h1, h2, h3, h4, h5, h6 {
       /* > 1024px */
       width: 1000px; } }
 
+#contenido-principal {
+  /* Contenido principal */
+  box-sizing: border-box; }
+  @media only screen and (min-width: 768px) {
+    #contenido-principal {
+      width: 66.7%;
+      float: left;
+      padding: 0 20px 0 0; } }
+
+aside {
+  /* Barra lateral principal (Museos en Londres) */ }
+  @media only screen and (min-width: 768px) {
+    aside {
+      width: 33.3%;
+      float: right; } }
+
 .navegacion {
   background-color: #09093c;
   padding: 10px; }
@@ -94,61 +110,6 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   height: 250px; }
 
-#contenido-principal {
-  /* Contenido principal */
-  box-sizing: border-box; }
-  @media only screen and (min-width: 768px) {
-    #contenido-principal {
-      width: 66.7%;
-      float: left;
-      padding: 0 20px 0 0; } }
-
-aside {
-  /* Barra lateral principal (Museos en Londres) */ }
-  @media only screen and (min-width: 768px) {
-    aside {
-      width: 33.3%;
-      float: right; } }
-
-.noticia {
-  /*  */
-  padding-top: 30px;
-  margin: 30px 0;
-  border-top: 2px dotted #EEE8D6; }
-  .noticia h3 {
-    color: #ffd35c;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    margin-top: 0; }
-  .noticia img {
-    float: left;
-    margin-right: 10px; }
-  .noticia p {
-    font-size: 1rem;
-    color: #EEE8D6; }
-
-.btn, .btn-verde {
-  /* Valores del botón genérico */
-  color: #EEE8D6;
-  display: block;
-  background-color: #d80601;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 5px 15px;
-  font-size: 1rem;
-  transition: all 3s ease;
-  border-radius: 0px; }
-  @media only screen and (min-width: 768px) {
-    .btn, .btn-verde {
-      display: inline-block;
-      border-radius: 5px; } }
-  .btn:hover, .btn-verde:hover {
-    background-color: #8c0401; }
-
-.btn-verde {
-  background-color: #548C27; }
-
 table {
   /* Cuerpo de la tabla "Museos en Londres" */
   margin-top: 30px;
@@ -204,3 +165,42 @@ table {
     display: block;
     max-width: 100%;
     border-radius: 10px; }
+
+.btn, .btn-verde {
+  /* Valores del botón genérico */
+  color: #EEE8D6;
+  display: block;
+  background-color: #d80601;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  font-size: 1rem;
+  transition: all 3s ease;
+  border-radius: 0px; }
+  @media only screen and (min-width: 768px) {
+    .btn, .btn-verde {
+      display: inline-block;
+      border-radius: 5px; } }
+  .btn:hover, .btn-verde:hover {
+    background-color: #8c0401; }
+
+.btn-verde {
+  background-color: #548C27; }
+
+.noticia {
+  /*  */
+  padding-top: 30px;
+  margin: 30px 0;
+  border-top: 2px dotted #EEE8D6; }
+  .noticia h3 {
+    color: #ffd35c;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 0; }
+  .noticia img {
+    float: left;
+    margin-right: 10px; }
+  .noticia p {
+    font-size: 1rem;
+    color: #EEE8D6; }
