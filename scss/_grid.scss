@@ -1,0 +1,23 @@
+/* Grid */
+// Resetea "float" de las etiquetas y devuelve altura a la etiqueta padre con la clase "container"
+.clear-fix {
+  @include clearfix;
+  @include tablet {
+    margin: 0 -1em; /* Reduce el cuerpo del contenido */
+  }
+}
+
+[class*='col-'] {
+  @include border-box;
+  float: left;
+  padding: 1em;  /* Agrega "padding" a cada elemento en el que se usa la clase "col-" */
+  width: 100%;
+}
+
+@include tablet {
+  @for $i from 1 through $number-cols {
+    .col-#{ $i } {
+      width: 100% / $number-cols * $i;
+    }
+  }
+}
