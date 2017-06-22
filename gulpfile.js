@@ -5,6 +5,7 @@ var browserSync = require('browser-sync');         /* browserSync: sincroniza au
 var reload = browserSync.reload;                   /* browserSync.reload: recarga el navegador cuando hay cambios en los archivos */
 var autoprefixer = require( 'gulp-autoprefixer' );
 var concat = require( 'gulp-concat' );
+var browserify = require( 'gulp-browserify' );     /* Gestor de dependencias */
 
 /* Path archivos JS */
 var pathsFilesJS = [
@@ -19,6 +20,7 @@ gulp .task( 'js', function() {
   /* 1. Indica a Gulp el path o paths de archivos a partir del cual Sass indicará a "concat" los archivos a integrar */
   gulp .src( pathsFilesJS )
        .pipe( concat( 'initial-script.js' ) )      /* El nombre del archivo en el que se concaterarán todos los archivos JS  */
+       .pipe( browserify() )                       /* Implementa el gestor de dependencias para el proyecto */
        .pipe( gulp .dest( 'app/js' ) );     /* El directorio de destino de dicho archivo final concatenado */
 });
 
