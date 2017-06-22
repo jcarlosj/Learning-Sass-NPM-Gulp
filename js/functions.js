@@ -1,4 +1,4 @@
 /* Funciones */
 function saluda ( message ) {
-  alert( 'Hola!' + message );
+  alert( 'Hola Mundo!!\n' + message );
 }

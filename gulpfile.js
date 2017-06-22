@@ -21,7 +21,8 @@ gulp .task( 'js', function() {
   gulp .src( pathsFilesJS )
        .pipe( concat( 'initial-script.js' ) )      /* El nombre del archivo en el que se concaterarán todos los archivos JS  */
        .pipe( browserify() )                       /* Implementa el gestor de dependencias para el proyecto */
-       .pipe( gulp .dest( 'app/js' ) );     /* El directorio de destino de dicho archivo final concatenado */
+       .pipe( gulp .dest( 'app/js' ) )             /* El directorio de destino de dicho archivo final concatenado */
+       .pipe( reload( { stream: true } ) );        /* Recarga los campos en el archivo de destino */
 });
 
 /* Crea la tarea "sass"
@@ -62,8 +63,12 @@ gulp.task('serve', ['sass'], function() {
    3. Define las tareas que debe ejecutar la tarea "watch"
     */
 gulp.task('watch', ['sass', 'serve', 'js' ], function() {
-  /* 1. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
+  /* 3A. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
        a. La ruta de los archivos .scss
        b. Ejecutando posteriormente la tarea "sass", previamente definida */
   gulp.watch(["scss/*.scss"], ['sass']);
+  /* 3B. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
+       a. La ruta de los archivos .js
+       b. Ejecutando posteriormente la tarea "js", previamente definida */
+  gulp.watch(["js/*.js"], ['js']);
 });
