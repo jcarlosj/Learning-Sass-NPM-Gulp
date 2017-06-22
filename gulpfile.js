@@ -4,6 +4,23 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');         /* browserSync: sincroniza automáticamente cambios de archivos en el navegador */
 var reload = browserSync.reload;                   /* browserSync.reload: recarga el navegador cuando hay cambios en los archivos */
 var autoprefixer = require( 'gulp-autoprefixer' );
+var concat = require( 'gulp-concat' );
+
+/* Path archivos JS */
+var pathsFilesJS = [
+  'js/scripts.js',
+  'js/functions.js'
+];
+
+/* Creamos la tarea que se encargará de concatenar los archivos JS
+   1. Define el nombre de la tarea "js"
+   2. Defines las tareas que debe ejecutar la tarea "js" */
+gulp .task( 'js', function() {
+  /* 1. Indica a Gulp el path o paths de archivos a partir del cual Sass indicará a "concat" los archivos a integrar */
+  gulp .src( pathsFilesJS )
+       .pipe( concat( 'initial-script.js' ) )      /* El nombre del archivo en el que se concaterarán todos los archivos JS  */
+       .pipe( gulp .dest( 'app/js' ) );     /* El directorio de destino de dicho archivo final concatenado */
+});
 
 /* Crea la tarea "sass"
    1. Define el nombre de la tarea "sass"
@@ -39,10 +56,10 @@ gulp.task('serve', ['sass'], function() {
 
 /* Crea la tarea "watch"
    1. Define el nombre de la tarea "watch"
-   2. Ejecuta la tarea denominada "sass" y posteriormente la tarea denominada "serve", previamente definidas
+   2. Ejecuta la tarea denominada "sass" y posteriormente las tarea denominada "serve" y "js", previamente definidas
    3. Define las tareas que debe ejecutar la tarea "watch"
     */
-gulp.task('watch', ['sass', 'serve'], function() {
+gulp.task('watch', ['sass', 'serve', 'js' ], function() {
   /* 1. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
        a. La ruta de los archivos .scss
        b. Ejecutando posteriormente la tarea "sass", previamente definida */
