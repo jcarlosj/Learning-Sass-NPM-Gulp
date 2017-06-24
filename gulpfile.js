@@ -6,6 +6,7 @@ var reload = browserSync.reload;                   /* browserSync.reload: recarg
 var autoprefixer = require( 'gulp-autoprefixer' );
 var concat = require( 'gulp-concat' );
 var browserify = require( 'gulp-browserify' );     /* Gestor de dependencias */
+var merge = require( 'merge-stream' );
 
 /* Path archivos JS */
 var pathsFilesJS = [
@@ -28,17 +29,21 @@ gulp .task( 'js', function() {
 /* Crea la tarea "sass"
    1. Define el nombre de la tarea "sass"
    2. Defines las tareas que debe ejecutar la tarea "sass" */
-gulp.task('sass', function() {
-  /* Define las acciones de la tarea
-     1. Indica a Gulp el archivo raiz Sass a partir del cual se definiran cambios en los estilos del proyecto */
-  gulp.src('scss/app.scss')
-    .pipe( autoprefixer() )           /* Implementa los prefijos de los elementos CSS que lo requieran (CSS no estandar) */
-    .pipe(
-      sass({
-        includePaths: ['scss']
-      })
-    )
-    .pipe( gulp .dest( 'app/css' ) ); /* Configura el destino de los archivos preprocesados por Sass */
+gulp .task( 'sass', function() {
+
+  /* Paso 1: Preprocesa el archivo SASS y lo convierte a CSS */
+  var sassFile = gulp .src( 'scss/app.scss' )        /* Asigna a el archivo CSS final preprocesado por SASS */
+   .pipe( autoprefixer() )                           /* Implementa el Autoprefixer para comandos CSS fuera del estándar */
+   .pipe( sass({
+     includePaths : [ 'scss' ]                       /* Agregamos SCSS como un Array */
+   }));
+  /* Paso 2: Asigna el contenido del archivo original CSS de Bootstrap */
+  var cssFile = gulp .src( './node_modules/bootstrap/dist/css/bootstrap.css' );
+  /* Paso 3: Realiza un Merge de los dos archivos anteriores */
+  return merge( sassFile, cssFile )                  /* Une el archivo css generado por SASS y el archivo CSS de Bootstrap */
+            .pipe( concat( 'app.css' ) )             /* Indica el nombre del archivo final */
+            .pipe( gulp .dest( 'app/css/' ) );       /* Indica la ruta donde se va a alojar el archivo generado de la unión "app.css" */
+
 });
 
 /* Crea la tarea "serve"
