@@ -8,6 +8,8 @@ var concat = require( 'gulp-concat' );
 var browserify = require( 'gulp-browserify' );     /* Gestor de dependencias */
 var merge = require( 'merge-stream' );             /* Unión de archivos */
 var uglify = require( 'gulp-uglify' );             /* Minificación de archivos Javascript*/
+var cssmin = require( 'gulp-cssmin' );             /* Minificación de archivos CSS */
+var rename = require( 'gulp-rename' );             /* Renombra archivos */
 
 /* Path archivos JS */
 var pathsFilesJS = [
@@ -44,6 +46,8 @@ gulp .task( 'sass', function() {
   /* Paso 3: Realiza un Merge de los dos archivos anteriores */
   return merge( sassFile, cssFile )                  /* Une el archivo css generado por SASS y el archivo CSS de Bootstrap */
             .pipe( concat( 'app.css' ) )             /* Indica el nombre del archivo final */
+            .pipe( cssmin() )                        /* Ejecuta la minificación de archivos CSS */
+            .pipe( rename({ suffix: '.min' }) )      /* Indicamos que agrege como sufijo al nombre del archivo "app" la cadena ".min" (Resultado: app.min.css) */
             .pipe( gulp .dest( 'app/css/' ) );       /* Indica la ruta donde se va a alojar el archivo generado de la unión "app.css" */
 
 });
