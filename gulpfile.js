@@ -10,6 +10,7 @@ var merge = require( 'merge-stream' );             /* Unión de archivos */
 var uglify = require( 'gulp-uglify' );             /* Minificación de archivos Javascript*/
 var cssmin = require( 'gulp-cssmin' );             /* Minificación de archivos CSS */
 var rename = require( 'gulp-rename' );             /* Renombra archivos */
+var htmlmin = require( 'gulp-htmlmin' );           /* Minificación de archivos HTML */
 
 /* Path archivos JS */
 var pathsFilesJS = [
@@ -73,7 +74,7 @@ gulp.task('serve', ['sass'], function() {
    2. Ejecuta la tarea denominada "sass" y posteriormente las tarea denominada "serve" y "js", previamente definidas
    3. Define las tareas que debe ejecutar la tarea "watch"
     */
-gulp.task('watch', ['sass', 'serve', 'js', 'moveFontsBootstrapToProject' ], function() {
+gulp.task('watch', ['sass', 'serve', 'js', 'moveFontsBootstrapToProject', 'minifyHTMLFiles' ], function() {
   /* 3A. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
        a. La ruta de los archivos .scss
        b. Ejecutando posteriormente la tarea "sass", previamente definida */
@@ -90,4 +91,11 @@ gulp .task( 'moveFontsBootstrapToProject', function() {
         indicandole las extensiones que deseamos copiar (dichas extensiones van separadas por comas y sin espacios) */
   gulp .src( './node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}' )
        .pipe( gulp .dest( 'app/fonts' ) );
+});
+
+/* Crea la tarea "minifyHTMLFiles" */
+gulp .task( 'minifyHTMLFiles', function() {
+  return gulp .src( './*.html' )            /* Todos los archivos HTML que se encuentren en la raiz del proyecto */
+              .pipe( htmlmin({collapseWhitespace:true}) )           /* Ejecuta la minificación de archivos HTML (Eliminando los espacios en blanco) */
+              .pipe( gulp .dest( 'app' ) );
 });
