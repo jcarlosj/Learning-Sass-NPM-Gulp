@@ -67,7 +67,7 @@ gulp.task('serve', ['sass'], function() {
    2. Ejecuta la tarea denominada "sass" y posteriormente las tarea denominada "serve" y "js", previamente definidas
    3. Define las tareas que debe ejecutar la tarea "watch"
     */
-gulp.task('watch', ['sass', 'serve', 'js' ], function() {
+gulp.task('watch', ['sass', 'serve', 'js', 'moveFontsBootstrapToProject' ], function() {
   /* 3A. Ejecuta el seguimiento de los archivos con Gulp, indicandole:
        a. La ruta de los archivos .scss
        b. Ejecutando posteriormente la tarea "sass", previamente definida */
@@ -76,4 +76,12 @@ gulp.task('watch', ['sass', 'serve', 'js' ], function() {
        a. La ruta de los archivos .js
        b. Ejecutando posteriormente la tarea "js", previamente definida */
   gulp.watch(["js/*.js"], ['js']);
+});
+
+/* Crea la tarea "moveFontsBootstrapToProject" */
+gulp .task( 'moveFontsBootstrapToProject', function() {
+  /* 1. Copia las fuentes desde el path original de Bootstrap, hacia nuestro directorio de fuentes del proyecto
+        indicandole las extensiones que deseamos copiar (dichas extensiones van separadas por comas y sin espacios) */
+  gulp .src( './node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}' )
+       .pipe( gulp .dest( 'app/fonts' ) );
 });
