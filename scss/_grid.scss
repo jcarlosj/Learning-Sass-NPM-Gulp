@@ -7,7 +7,7 @@
   }
 }
 
-[class*='col-'] {
+[class*='column-'] {
   @include border-box;
   float: left;
   padding: 1em;  /* Agrega "padding" a cada elemento en el que se usa la clase "col-" */
@@ -16,7 +16,7 @@
 
 @include tablet {
   @for $i from 1 through $number-cols {
-    .col-#{ $i } {
+    .column-#{ $i } {
       width: 100% / $number-cols * $i;
     }
   }

@@ -6772,6 +6772,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFBA00;
   font-family: "Open Sans", sans-serif; }
 
+div.caption {
+  min-height: 80px; }
+
 .container {
   /* < 768px */
   margin: 0 auto;
@@ -6977,7 +6980,7 @@ li {
     margin: 0 -1em;
     /* Reduce el cuerpo del contenido */ } }
 
-[class*='col-'] {
+[class*='column-'] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -6987,27 +6990,27 @@ li {
   width: 100%; }
 
 @media only screen and (min-width: 768px) {
-  .col-1 {
+  .column-1 {
     width: 8.33333%; }
-  .col-2 {
+  .column-2 {
     width: 16.66667%; }
-  .col-3 {
+  .column-3 {
     width: 25%; }
-  .col-4 {
+  .column-4 {
     width: 33.33333%; }
-  .col-5 {
+  .column-5 {
     width: 41.66667%; }
-  .col-6 {
+  .column-6 {
     width: 50%; }
-  .col-7 {
+  .column-7 {
     width: 58.33333%; }
-  .col-8 {
+  .column-8 {
     width: 66.66667%; }
-  .col-9 {
+  .column-9 {
     width: 75%; }
-  .col-10 {
+  .column-10 {
     width: 83.33333%; }
-  .col-11 {
+  .column-11 {
     width: 91.66667%; }
-  .col-12 {
+  .column-12 {
     width: 100%; } }

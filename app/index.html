@@ -52,7 +52,7 @@
     </div> <!-- #slider -->
 
     <div id="contenido-principal" class="clear-fix">
-      <div class="col-8">
+      <div class="column-8">
           <h2 class="titulo">Noticias</h2>
           <div class="noticias" id="noticias">
               <div class="noticia">
@@ -76,7 +76,7 @@
           </div> <!--.media-->
         </div> <!--.col-8-->
 
-        <aside class="sidebar col-4">
+        <aside class="sidebar column-4">
           <div class="horario">
             <table>
               <caption>Museos en Londres</caption>
@@ -138,7 +138,7 @@
   </div> <!--.london-->
 
   <div id="galeria" class="galeria">
-    <h2>Galería</h2>
+    <h2>Galería 1</h2>
 
     <li class="imagen">
         <img src="http://placehold.it/300x300">
@@ -172,25 +172,46 @@
     </li>
   </div>
 
+  <div id="galeria" class="galeria">
+    <h2>Galería 2</h2>
+
+    <div id="galeria-londres"></div>
+    <!-- Creamos el template Mustache -->
+    <script id="template" type="x-tmpl-mustache">
+      {{! Recorremos los datos contenidos en el "Array" con el nombre "galeria" usando "Mustache" }}
+      {{#galeria}}
+        {{! Creamos una galeria usando Bootstrap }}
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{imagen}}" alt=""/>
+          </div>
+          <div class="caption text-center">
+            <h3>{{destino}}</h3>
+          </div>
+        </div>
+      {{/galeria}}
+    </script>
+  </div>
+
   <div id="servicios" class="servicios">
     <h2>Servicios</h2>
       <ul class="servicios-lista clear-fix">
-          <li class="col-3">
+          <li class="column-3">
             <h3>Servicio 1</h3>
                 <p>Nam vitae cursus massa. Nunc ut arcu a mi convallis feugiat. Sed ante sem, sollicitudin sed porta et, molestie in turpis. Nulla lacinia lacus nec ligula feugiat eget sagittis metus lobortis.</p>
                 <a class="btn-servicio" href="#">Leer más</a>
           </li>
-          <li class="col-3">
+          <li class="column-3">
             <h3>Servicio 2</h3>
                 <p>Nam vitae cursus massa. Nunc ut arcu a mi convallis feugiat. Sed ante sem, sollicitudin sed porta et, molestie in turpis. Nulla lacinia lacus nec ligula feugiat eget sagittis metus lobortis.</p>
                 <a class="btn-servicio" href="#">Leer más</a>
           </li>
-          <li class="col-3">
+          <li class="column-3">
             <h3>Servicio 3</h3>
                 <p>Nam vitae cursus massa. Nunc ut arcu a mi convallis feugiat. Sed ante sem, sollicitudin sed porta et, molestie in turpis. Nulla lacinia lacus nec ligula feugiat eget sagittis metus lobortis.</p>
                 <a class="btn-servicio" href="#">Leer más</a>
           </li>
-          <li class="col-3">
+          <li class="column-3">
             <h3>Servicio 4</h3>
                 <p>Nam vitae cursus massa. Nunc ut arcu a mi convallis feugiat. Sed ante sem, sollicitudin sed porta et, molestie in turpis. Nulla lacinia lacus nec ligula feugiat eget sagittis metus lobortis.</p>
                 <a class="btn-servicio" href="#">Leer más</a>
